@@ -1,42 +1,62 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
-function TodoForm() {
-  const [state, setState] = useState({
-    title: '',
-    content: '',
-  });
+const TodoForm = ({ addTodos }) => {
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
 
-  const handleChangeState = (e) => {
-    console.log(e.target.name);
-    console.log(e.target.value);
+  const onChangeTitle = (e) => {
+    setTitle(e.target.value);
+  };
 
-    setState({
-      ...state,
-      [e.target.name]: e.target.value,
-    });
+  const onChangeContent = (e) => {
+    setContent(e.target.value);
+  };
+
+  const titleInput = useRef();
+  const ContentInput = useRef();
+
+  // input에 입력값 없을 시  alert 대신 focus 효과로 대신해보기
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (title.length < 1) {
+      titleInput.current.focus();
+      return;
+    }
+
+    if (content.length < 1) {
+      ContentInput.current.focus();
+      return;
+    }
+
+    addTodos(title, content);
+    // 저장 후 작성 폼 데이터 초기값으로
+    setTitle('');
+    setContent('');
   };
 
   return (
-    <div>
-      <p>제목</p>
+    <form onSubmit={onSubmit}>
+      <label>제목</label>
       <input
         type="text"
         name="title"
-        value={state.title}
-        onChange={handleChangeState}
+        value={title}
+        ref={titleInput}
+        onChange={onChangeTitle}
         placeholder="제목을 입력해주세요"
       ></input>
-      <p>내용</p>
+      <label>내용</label>
       <input
         type="text"
         name="content"
-        value={state.content}
-        onChange={handleChangeState}
+        value={content}
+        ref={ContentInput}
+        onChange={onChangeContent}
         placeholder="내용을 입력해주세요"
       ></input>
-      <button>등록</button>
-    </div>
+      <button type="submit">등록</button>
+    </form>
   );
-}
+};
 
 export default TodoForm;

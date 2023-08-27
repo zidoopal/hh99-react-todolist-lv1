@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Header() {
+const Header = () => {
   return (
     <div>
-      <h2>TODO LIST</h2>
+      <h1>TODO LIST</h1>
     </div>
   );
-}
+};
 
 export default Header;

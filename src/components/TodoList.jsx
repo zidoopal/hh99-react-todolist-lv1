@@ -1,20 +1,36 @@
 import React from 'react';
-import TodoItem from './TodoItem.jsx';
+import TodoItem from './TodoItem';
 
-function TodoListWorking() {
+const TodoList = ({ todos, deleteHandler, doneHandler }) => {
   return (
     <div>
-      <div>
-        <h2>Working...🔥</h2>
-        <TodoItem />
-      </div>
+      <h2>Working.. 🔥</h2>
+      {todos &&
+        todos
+          .filter((item) => item.done === false)
+          .map((ele) => (
+            <TodoItem
+              todos={ele}
+              key={ele.id}
+              todo={ele}
+              deleteHandler={deleteHandler}
+              doneHandler={doneHandler}
+            />
+          ))}
 
-      <div>
-        <h2>Done !!!✨</h2>
-        <TodoItem />
-      </div>
+      <h2>Done !!! ✨🎉</h2>
+      {todos &&
+        todos
+          .filter((item) => item.done === true)
+          .map((ele) => (
+            <TodoItem
+              key={ele.id}
+              todo={ele}
+              deleteHandler={deleteHandler}
+              doneHandler={doneHandler}
+            />
+          ))}
     </div>
   );
-}
-
-export default TodoListWorking;
+};
+export default TodoList;
