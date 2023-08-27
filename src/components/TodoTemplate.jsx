@@ -7,13 +7,12 @@ const TodoTemplateBlock = styled.div`
   flex-direction: column;
 
   width: 800px;
-  height: 850px;
+  max-width: 1200px;
+  min-height: 800px;
 
-  position: relative; /* 추후 박스 하단에 추가 버튼을 위치시키기 위한 설정 */
-
-  background: white;
+  background: #f9f7f7;
   border-radius: 15px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04);
+  box-shadow: 0 0 10px 3px rgba(75, 102, 130, 0.3);
 
   margin: 0 auto; /* 페이지 중앙에 나타나도록 설정 */
   margin-top: 40px;
@@ -22,7 +21,14 @@ const TodoTemplateBlock = styled.div`
 `;
 
 const TodoTemplate = ({ children }) => {
-  return <TodoTemplateBlock>{children}</TodoTemplateBlock>;
+  return (
+    <TodoTemplateBlock>
+      <h1 className="template-title">
+        TODO LIST<i className="template-logo"></i>
+      </h1>
+      {children}
+    </TodoTemplateBlock>
+  );
 };
 
 export default TodoTemplate;

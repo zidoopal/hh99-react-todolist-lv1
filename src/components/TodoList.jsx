@@ -3,8 +3,8 @@ import TodoItem from './TodoItem';
 
 const TodoList = ({ todos, deleteHandler, doneHandler }) => {
   return (
-    <div>
-      <h2>Working.. 🔥</h2>
+    <div className="todo-list">
+      <h2>Working ...🔥</h2>
       {todos &&
         todos
           .filter((item) => item.done === false)
@@ -18,7 +18,7 @@ const TodoList = ({ todos, deleteHandler, doneHandler }) => {
             />
           ))}
 
-      <h2>Done !!! ✨🎉</h2>
+      <h2>Done !!!🎉</h2>
       {todos &&
         todos
           .filter((item) => item.done === true)

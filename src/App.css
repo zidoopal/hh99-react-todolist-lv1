@@ -1,0 +1,55 @@
+/* fonts */
+@font-face {
+  font-family: 'RIDIBatang';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  font-family: 'RIDIBatang';
+  color: #112d4e;
+  /* margin: 0; */
+  letter-spacing: 0.025em;
+}
+
+/* main-background */
+body {
+  background: #dbe2ef;
+}
+
+/* reset css */
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+}
+
+/* button */
+button {
+  cursor: pointer;
+  width: 55px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #e8dfca;
+  transition: background-color 0.2s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
+
+  font-size: 14px;
+}
+
+button:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 6px;
+}

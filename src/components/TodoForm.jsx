@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import 'App.css';
 
 const TodoForm = ({ addTodos }) => {
   const [title, setTitle] = useState('');
@@ -35,7 +36,7 @@ const TodoForm = ({ addTodos }) => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="input-form">
       <label>제목</label>
       <input
         type="text"
@@ -54,7 +55,9 @@ const TodoForm = ({ addTodos }) => {
         onChange={onChangeContent}
         placeholder="내용을 입력해주세요"
       ></input>
-      <button type="submit">등록</button>
+      <button className="add-btn" type="submit">
+        등록
+      </button>
     </form>
   );
 };

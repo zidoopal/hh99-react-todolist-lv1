@@ -1,6 +1,5 @@
 import { Fragment, useState } from 'react';
 import TodoTemplate from './components/TodoTemplate';
-import Header from 'components/Header';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import 'style.css';
@@ -43,7 +42,6 @@ const App = () => {
   return (
     <Fragment>
       <TodoTemplate>
-        <Header />
         <TodoForm title={title} content={content} addTodos={addTodos} />
         <TodoList
           todos={todos}
