@@ -79,7 +79,7 @@ input::placeholder {
 }
 .del-btn:hover,
 .add-btn:hover {
-  background-color: #d4cab3;
+  background-color: #e0ddd5;
 }
 
 /* TodoItem */
