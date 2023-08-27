@@ -1,4 +1,7 @@
 ## 🚢 항해99 | React Lv.1 과제 - My Todo List 만들기 📃
+🤗 [배포 사이트 바로가기](https://hh99-react-todolist-gilt.vercel.app/)
+
+![image](https://github.com/zidoopal/hh99-react-todolist/assets/131226548/8713e503-2e25-4538-86dd-df2532c932d7)
 
 ### ⚙ features : 구현 기능
 
