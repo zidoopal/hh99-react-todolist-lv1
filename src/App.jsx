@@ -13,7 +13,7 @@ const App = () => {
   // TodoForm에서 값 받아오기
   const addTodos = (title, content) => {
     const newTodos = {
-      id: todos.length + 1,
+      id: Date.now(),
       title: title,
       content: content,
       done: false,
